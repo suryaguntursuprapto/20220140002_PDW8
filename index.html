@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Personal Website</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">My Website</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="biodata.html">Biodata</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about_me.html">About Me</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="hobbies.html">Hobbies</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="friend_form.html">Friend Form</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <h1 class="text-center">Welcome to My Personal Website</h1>
+    <p class="text-center">Explore my biodata, learn more about me, and discover my hobbies.</p>
+    <div class="text-center mt-4">
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="navRadio" id="aboutMeRadio" value="about_me.html">
+        <label class="form-check-label" for="aboutMeRadio">About Me</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="navRadio" id="biodataRadio" value="biodata.html">
+        <label class="form-check-label" for="biodataRadio">Biodata</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="navRadio" id="hobbiesRadio" value="hobbies.html">
+        <label class="form-check-label" for="hobbiesRadio">Hobbies</label>
+      <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="navRadio" id="friendFormRadio" value="friend_form.html">
+            <label class="form-check-label" for="friend_formradio">form</label>
+      </div>
+      <button id="goButton" class="btn btn-primary ml-2">Go</button>
+    </div>
+  </div>
+
+  <footer class="footer mt-5 py-3 bg-dark text-white text-center">
+    <p>&copy; 2024 My Personal Website. All Rights Reserved.</p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    document.getElementById('goButton').addEventListener('click', function() {
+      const radios = document.getElementsByName('navRadio');
+      let selectedPage;
+      for (let i = 0; i < radios.length; i++) {
+        if (radios[i].checked) {
+          selectedPage = radios[i].value;
+          break;
+        }
+      }
+      if (selectedPage) {
+        window.location.href = selectedPage;
+      }
+    });
+  </script>
+</body>
+</html>
